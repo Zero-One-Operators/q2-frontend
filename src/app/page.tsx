@@ -1,9 +1,14 @@
-import './global.css';
+import { Button, Typography, Container } from "@mui/material";
 
 export default function Home() {
   return (
-    <div>
-      <h1> q2-frontend </h1>
-    </div>
+    <Container>
+      <Typography variant="h4" gutterBottom>
+        Q2 app with Material UI!!
+      </Typography>
+      <Button variant="contained" color="primary">
+        Click Me
+      </Button>
+    </Container>
   );
 }
