@@ -24,12 +24,15 @@ describe('Home Component', () => {
     render(<Page />);
 
     const buttonElement = screen.getByRole('button', { name: /Click Me/i });
-    
+
     // Ensures it's a contained button
-    expect(buttonElement).toHaveClass('MuiButton-contained'); 
-    
+    expect(buttonElement).toHaveClass('MuiButton-contained');
+
     // Instead of checking for color classes, check for the variant and color props.
     expect(buttonElement).toHaveAttribute('class', expect.stringContaining('MuiButton-contained'));
-    expect(buttonElement).toHaveAttribute('class', expect.stringContaining('MuiButton-containedPrimary'));
+    expect(buttonElement).toHaveAttribute(
+      'class',
+      expect.stringContaining('MuiButton-containedPrimary'),
+    );
   });
 });

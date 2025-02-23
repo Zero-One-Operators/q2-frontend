@@ -1,7 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import Temp from "../../app/temp/page";
+import Temp from '../../app/temp/page';
 import '@testing-library/jest-dom';
-
 
 describe('Counter Component', () => {
   test('renders initial counter value', () => {
