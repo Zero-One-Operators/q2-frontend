@@ -1,3 +1,6 @@
+// DO NOT DELETE
+// Current reference page for tests
+
 import { render, screen, fireEvent } from '@testing-library/react';
 import Temp from '../../app/temp/page';
 import '@testing-library/jest-dom';
