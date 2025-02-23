@@ -1,0 +1,7 @@
+// To satisy Jest because Next resets "jsx" in tsconfig too "preserve" which breaks jest
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react"
+  }
+}
