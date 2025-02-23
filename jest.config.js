@@ -20,12 +20,12 @@ module.exports = {
     '\\.svg$': '<rootDir>/__mocks__/fileMock.js',
   },
 
-  // Handle ESM/TSX file extensions
+  // Handle TSX file extensions
   extensionsToTreatAsEsm: ['.ts', '.tsx'],
 
   globals: {
     'ts-jest': {
-      useBabelrc: true, // Make sure Babel configuration is used
+      useBabelrc: true,
     },
     //Ensures react is loaded for Jest tests because of Next preserve setting
     tsconfig: './tsconfig.test.json',
