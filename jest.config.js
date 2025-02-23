@@ -29,6 +29,8 @@ module.exports = {
       'ts-jest': {
         useBabelrc: true, // Make sure Babel configuration is used
       },
+      //Ensures react is loaded for Jest tests because of Next preserve setting
+      "tsconfig": "./tsconfig.test.json"
     },
   };
   
