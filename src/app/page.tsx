@@ -1,14 +1,19 @@
-import { Button, Typography, Container } from '@mui/material';
+import SideBar from '@/components/sideBar';
+import { Box } from '@mui/material';
 
 export default function Home() {
   return (
-    <Container>
-      <Typography variant="h4" gutterBottom>
-        Q2 app with Material UI!!
-      </Typography>
-      <Button variant="contained" color="primary">
-        Click Me
-      </Button>
-    </Container>
+    <Box
+      sx={{
+        width: '100vw',
+        height: '100vh',
+        margin: '0',
+        padding: '1em',
+        backgroundColor: '#6e6eb5',
+        boxSizing: 'border-box',
+      }}
+    >
+      <SideBar />
+    </Box>  
   );
 }

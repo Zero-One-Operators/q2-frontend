@@ -1,0 +1,17 @@
+
+html
+{
+  margin: 0;
+}
+
+body 
+{
+  margin: 0;
+}
+
+#bodyWrapper
+{
+  background-color: aquamarine;
+  padding: 1em;
+}
+
