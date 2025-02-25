@@ -30,3 +30,6 @@ Check that Tests Pass:
 ```bash
 npm test
 ```
+Write Tests For Your Components:
+
+- Check reference on how to write tests: src/__tests__/temp/page.test.tsx
