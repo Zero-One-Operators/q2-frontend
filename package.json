@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
+    "format": "prettier --write 'src/**/*.{js,ts,tsx,css}'",
+    "format:check": "prettier --check 'src/**/*.{js,ts,tsx,css}'",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
