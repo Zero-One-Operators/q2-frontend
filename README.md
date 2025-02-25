@@ -7,14 +7,18 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 ```bash
 git clone https://github.com/Zero-One-Operators/q2-frontend.git
 ```
+2. Go Into Project Folder:
 
-2. Install Packages:
+```bash
+cd q2-frontend
+```
+3. Install Packages:
 
 ```bash
 npm install
 ```
 
-3. Run the Frontend:
+4. Run the Frontend:
 
 ```bash
 npm run dev
