@@ -1,8 +1,10 @@
 'use client';
 
 import { Box } from '@mui/material';
+import useMediaQuery from '@mui/material';
 
 const SideBar = () => {
+
   return (
     <>
       <Box
