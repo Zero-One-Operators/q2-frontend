@@ -27,6 +27,7 @@ npm run dev
 ### Before Making a Pull Request
 
 Check that Tests Pass:
+
 ```bash
 npm test
 ```
