@@ -23,7 +23,6 @@ export default function Home() {
         {/* If we need more padding between the sidebar and the left page, we can add another box as a container here */}
         <Header />
         <p> Put your header and chat components here </p>
-
       </Box>
     </Box>
   );
