@@ -1,4 +1,5 @@
 import SideBar from '@/components/sideBar';
+import Header from '@/components/Header';
 import { Box } from '@mui/material';
 
 export default function Home() {
@@ -9,7 +10,7 @@ export default function Home() {
         height: '100vh',
         margin: '0',
         padding: '1em',
-        backgroundColor: '#6e6eb5',
+        backgroundColor: 'white',
         boxSizing: 'border-box',
         display: 'flex',
         flexDirection: 'row',
@@ -17,8 +18,10 @@ export default function Home() {
     >
       <SideBar />
 
-      <Box sx={{ backgroundColor: 'blue', width: '100%', height: '300px', color: 'white' }}>
-        {/* Put your components here, will most likely need a box*/}
+      <Box sx={{ backgroundColor: 'white', width: '100%', height: '300px', color: 'white' }}>
+        {/* ****** Put your components here ****** */}
+        {/* If we need more padding between the sidebar and the left page, we can add another box as a container here */}
+        <Header />
         <p> Put your header and chat components here </p>
       </Box>
     </Box>
