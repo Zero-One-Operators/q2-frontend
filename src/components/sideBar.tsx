@@ -9,9 +9,8 @@ const SideBar = () => {
         sx={{
           display: 'flex',
           height: '100%',
-          width: '300px',
-          marginRight: '1em',
-          backgroundColor: 'red',
+          width: '100%',
+          marginTop: '10px',
         }}
       >
         <p> Will be sidebar </p>

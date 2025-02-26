@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { AppBar, Toolbar, Typography, IconButton, Menu, MenuItem, Box } from '@mui/material';
+import { Typography, IconButton, Menu, MenuItem, Box } from '@mui/material';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
 import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
 
@@ -20,41 +20,41 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="static" color="default" elevation={1}>
-      <Toolbar sx={{ justifyContent: 'space-between' }}>
-        <Typography variant="h6" fontWeight="bold">
-          Latest Chat
-        </Typography>
-        <Box display="flex" alignItems="center">
-          <IconButton edge="end" color="inherit" aria-label="delete" onClick={handleDeleteClick}>
-            <DeleteTwoToneIcon />
-          </IconButton>
-          <Box position="relative">
-            <IconButton
-              edge="end"
-              color="inherit"
-              aria-label="more options"
-              onClick={handleMenuOpen}
-              sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
-            >
-              <MoreVertTwoToneIcon />
-            </IconButton>
+    <Box
+      sx={{
+        width: '97%',
+        bgcolor: 'white',
+        borderBottom: '1px solid #ddd',
+        padding: '10px 30px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+      }}
+    >
+      <Typography variant="h6" fontWeight="bold">
+        Latest Chat
+      </Typography>
+      <Box display="flex" alignItems="center">
+        <IconButton color="default" aria-label="delete" onClick={handleDeleteClick}>
+          <DeleteTwoToneIcon />
+        </IconButton>
+        <IconButton color="default" aria-label="more options" onClick={handleMenuOpen}>
+          <MoreVertTwoToneIcon />
+        </IconButton>
 
-            <Menu
-              anchorEl={anchorEl}
-              open={Boolean(anchorEl)}
-              onClose={handleMenuClose}
-              keepMounted
-              anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-              transformOrigin={{ vertical: 'top', horizontal: 'center' }}
-            >
-              <MenuItem onClick={handleMenuClose}>Option 1</MenuItem>
-              <MenuItem onClick={handleMenuClose}>Option 2</MenuItem>
-            </Menu>
-          </Box>
-        </Box>
-      </Toolbar>
-    </AppBar>
+        <Menu
+          anchorEl={anchorEl}
+          open={Boolean(anchorEl)}
+          onClose={handleMenuClose}
+          keepMounted
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+          transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+        >
+          <MenuItem onClick={handleMenuClose}>Option 1</MenuItem>
+          <MenuItem onClick={handleMenuClose}>Option 2</MenuItem>
+        </Menu>
+      </Box>
+    </Box>
   );
 };
 
