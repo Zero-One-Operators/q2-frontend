@@ -26,12 +26,23 @@ npm run dev
 
 ### Before Making a Pull Request
 
-Check that Tests Pass:
+1. Check that Tests Pass:
 
 ```bash
 npm test
 ```
-Write Tests For Your Components:
+
+2. Format using prettier
+```bash
+npx prettier . --write
+```
+
+3. Run lint
+```bash
+npm run lint
+```
+
+### How to Write Tests For Your Components:
 
 - Check reference on how to write tests: `src/__tests__/temp/page.test.tsx`
 
