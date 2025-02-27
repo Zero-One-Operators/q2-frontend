@@ -36,7 +36,7 @@ export default function Home() {
           backgroundColor: 'white',
           margin: '1em',
           overflow: 'hidden',
-          padding: '20px',
+          padding: '0 20px 0px 20px',
         }}
       >
         <Header />
