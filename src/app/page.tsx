@@ -51,17 +51,6 @@ export default function Home() {
         >
           <Chat />
         </Box>
-        <Box
-          sx={{
-            padding: 2,
-            flexGrow: 1,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <Chat />
-        </Box>
       </Box>
     </Box>
   );
