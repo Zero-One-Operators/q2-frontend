@@ -7,18 +7,18 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 ```bash
 git clone https://github.com/Zero-One-Operators/q2-frontend.git
 ```
-2. Go Into Project Folder:
+2. Go Into project folder:
 
 ```bash
 cd q2-frontend
 ```
-3. Install Packages:
+3. Install packages:
 
 ```bash
 npm install
 ```
 
-4. Run the Frontend:
+4. Run the frontend:
 
 ```bash
 npm run dev
@@ -26,7 +26,7 @@ npm run dev
 
 ### Before Making a Pull Request
 
-1. Check that Tests Pass:
+1. Check that tests pass:
 
 ```bash
 npm test
