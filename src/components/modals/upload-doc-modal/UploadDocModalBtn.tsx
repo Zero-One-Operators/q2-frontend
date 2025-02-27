@@ -1,5 +1,4 @@
-
-import {  MenuItem } from '@mui/material';
+import { MenuItem } from '@mui/material';
 
 import React, { useState } from 'react';
 import UploadDocModal from './UploadDocModal';
@@ -8,21 +7,20 @@ interface UploadDocModalBtnProps {
   handleMenuClose: () => void;
 }
 
-export default function UploadDocModalBtn({  handleMenuClose }: UploadDocModalBtnProps) {
-    
+export default function UploadDocModalBtn({ handleMenuClose }: UploadDocModalBtnProps) {
   const [docModalOpen, setDocModalOpen] = useState(false);
 
-  const openDocUploadModal = () =>{
+  const openDocUploadModal = () => {
     handleMenuClose();
     setDocModalOpen(true);
-  }
+  };
 
   const closeDocModal = () => setDocModalOpen(false);
 
   return (
     <>
-     <MenuItem onClick={openDocUploadModal}>Upload Document</MenuItem>
-     <UploadDocModal open={docModalOpen} onClose={closeDocModal} />
+      <MenuItem onClick={openDocUploadModal}>Upload Document</MenuItem>
+      <UploadDocModal open={docModalOpen} onClose={closeDocModal} />
     </>
   );
 }
