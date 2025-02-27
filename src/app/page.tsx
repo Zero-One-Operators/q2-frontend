@@ -1,4 +1,4 @@
-import SideBar from '@/components/sideBar';
+import SideBar from '@/components/SideBar';
 import Header from '@/components/Header';
 import { Box } from '@mui/material';
 import Chat from '@/components/Chat';
@@ -14,7 +14,7 @@ export default function Home() {
     >
       <Box
         sx={{
-          width: 250,
+          width: 225,
           flexShrink: 0,
           backgroundColor: '#f8f6f6',
           borderRight: '1px solid #ddd',
