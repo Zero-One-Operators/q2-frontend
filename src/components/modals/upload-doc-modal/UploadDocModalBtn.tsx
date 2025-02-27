@@ -10,7 +10,7 @@ interface UploadDocModalBtnProps {
 
 export default function UploadDocModalBtn({  handleMenuClose }: UploadDocModalBtnProps) {
     
-  const [docModalOpen, setDocModalOpen] = useState(true);
+  const [docModalOpen, setDocModalOpen] = useState(false);
 
   const openDocUploadModal = () =>{
     handleMenuClose();

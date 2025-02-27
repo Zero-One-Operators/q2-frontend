@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Typography, IconButton, Menu, MenuItem, Box } from '@mui/material';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
 import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
+import UploadDocModalBtn from './modals/upload-doc-modal/UploadDocModalBtn';
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -50,7 +51,7 @@ const Header = () => {
           anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
           transformOrigin={{ vertical: 'top', horizontal: 'right' }}
         >
-          <MenuItem onClick={handleMenuClose}>Option 1</MenuItem>
+          <UploadDocModalBtn handleMenuClose={handleMenuClose} />
           <MenuItem onClick={handleMenuClose}>Option 2</MenuItem>
         </Menu>
       </Box>
