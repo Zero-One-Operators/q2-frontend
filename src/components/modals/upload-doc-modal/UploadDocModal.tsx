@@ -50,10 +50,15 @@ const UploadDocModal: React.FC<UploadDocModalProps> = ({ open, onClose }) => {
     console.log('Uploading:', selectedFile);
   };
 
+  const handleCloseModal = () => {
+    setSelectedFile(null);
+    onClose();
+  };
+
   return (
     <Dialog
       open={open}
-      onClose={onClose}
+      onClose={handleCloseModal}
       maxWidth="sm"
       fullWidth
       disableEnforceFocus
@@ -65,7 +70,7 @@ const UploadDocModal: React.FC<UploadDocModalProps> = ({ open, onClose }) => {
         </Typography>
         <IconButton
           aria-label="close"
-          onClick={onClose}
+          onClick={handleCloseModal}
           sx={{ position: 'absolute', right: 8, top: 8, fontSize: 30 }}
         >
           <CloseIcon sx={{ fontSize: 30 }} />
@@ -123,7 +128,7 @@ const UploadDocModal: React.FC<UploadDocModalProps> = ({ open, onClose }) => {
           <List sx={{ padding: '0px' }}>
             <ListItem sx={{ padding: '2px 15px' }}>
               <ListItemIcon sx={{ minWidth: '5%' }}>
-                <DescriptionIcon sx={{ color: 'white', fontSize: 40 }} />
+                <DescriptionIcon sx={{ color: 'white', fontSize: 30 }} />
               </ListItemIcon>
               <Box
                 sx={{
@@ -167,7 +172,7 @@ const UploadDocModal: React.FC<UploadDocModalProps> = ({ open, onClose }) => {
                     },
                   }}
                 >
-                  <DeleteIcon sx={{ color: 'white', fontSize: 40 }} />
+                  <DeleteIcon sx={{ color: 'white', fontSize: 30 }} />
                 </IconButton>
               </Box>
             </ListItem>
@@ -178,7 +183,7 @@ const UploadDocModal: React.FC<UploadDocModalProps> = ({ open, onClose }) => {
 
 
       <DialogActions sx={{ paddingBottom: '40px', paddingRight: '24px' }}>
-        <Button onClick={onClose} color="inherit" sx={{ fontSize: 15 }}>
+        <Button onClick={handleCloseModal} color="inherit" sx={{ fontSize: 15 }}>
           Cancel
         </Button>
         <Button
