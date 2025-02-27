@@ -1,6 +1,7 @@
 import SideBar from '@/components/sideBar';
 import Header from '@/components/Header';
 import { Box } from '@mui/material';
+import Chat from '@/components/Chat';
 
 export default function Home() {
   return (
@@ -8,21 +9,48 @@ export default function Home() {
       sx={{
         width: '100vw',
         height: '100vh',
-        margin: '0',
-        padding: '1em',
-        backgroundColor: 'white',
-        boxSizing: 'border-box',
         display: 'flex',
-        flexDirection: 'row',
       }}
     >
-      <SideBar />
-
-      <Box sx={{ backgroundColor: 'white', width: '100%', height: '300px', color: 'white' }}>
-        {/* ****** Put your components here ****** */}
-        {/* If we need more padding between the sidebar and the left page, we can add another box as a container here */}
+      <Box
+        sx={{
+          width: 250,
+          flexShrink: 0,
+          backgroundColor: '#f8f6f6',
+          borderRight: '1px solid #ddd',
+          marginTop: '1em',
+          marginLeft: '1em',
+          marginBottom: '1em',
+          display: 'flex',
+          flexDirection: 'column',
+          padding: '10px',
+        }}
+      >
+        <SideBar />
+      </Box>
+      <Box
+        sx={{
+          flexGrow: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          backgroundColor: 'white',
+          margin: '1em',
+          overflow: 'hidden',
+          padding: '0 20px 0px 20px',
+        }}
+      >
         <Header />
-        <p> Put your header and chat components here </p>
+        <Box
+          sx={{
+            padding: 2,
+            flexGrow: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Chat />
+        </Box>
       </Box>
     </Box>
   );
