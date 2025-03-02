@@ -19,7 +19,7 @@ export default function TestPage() {
     } catch (error) {
       console.error("Error fetching data:", error);
     }
-  };f
+  };
 
   useEffect(() => {
     getData(); 
