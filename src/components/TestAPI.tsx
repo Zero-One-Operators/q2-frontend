@@ -9,6 +9,10 @@ const TestAPI = () => {
     e.preventDefault();
     setLoading(true);
   
+    // ********
+    // REMEMBER - Write ENV for host or research a better configuration for this
+    // ********
+    
     try {
       // Use POST and send the message in the body as JSON
       const res = await fetch('http://localhost:8000/message', {
