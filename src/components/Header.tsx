@@ -4,6 +4,7 @@ import { Typography, IconButton, Menu, MenuItem, Box } from '@mui/material';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
 import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
 import UploadDocModalBtn from './modals/upload-doc-modal/UploadDocModalBtn';
+import TestAPI from './TestAPI';
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -21,6 +22,7 @@ const Header = () => {
   };
 
   return (
+    <>
     <Box
       sx={{
         width: '97%',
@@ -56,6 +58,8 @@ const Header = () => {
         </Menu>
       </Box>
     </Box>
+    <TestAPI />
+    </>
   );
 };
 
