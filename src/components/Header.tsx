@@ -1,9 +1,10 @@
 'use client';
 import React, { useState } from 'react';
-import { Typography, IconButton, Menu, MenuItem, Box } from '@mui/material';
+import { Typography, IconButton, Menu, Box } from '@mui/material';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
 import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
 import UploadDocModalBtn from './modals/upload-doc-modal/UploadDocModalBtn';
+import OpenApiKeyModalBtn from './modals/upload-api-key-modal/OpenApiKeyModalBtn';
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -52,7 +53,7 @@ const Header = () => {
           transformOrigin={{ vertical: 'top', horizontal: 'right' }}
         >
           <UploadDocModalBtn handleMenuClose={handleMenuClose} />
-          <MenuItem onClick={handleMenuClose}>Option 2</MenuItem>
+          <OpenApiKeyModalBtn handleMenuClose={handleMenuClose} />
         </Menu>
       </Box>
     </Box>
