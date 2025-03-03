@@ -1,5 +1,7 @@
+// commented out various useState and onChange for future use with API key and selected models
+
 'use client';
-import React, { useState }  from 'react';
+import React from 'react';
 import {
   Dialog,
   DialogTitle,
@@ -21,16 +23,18 @@ interface ApiKeyProps {
 }
 
 const ApiKeyModal: React.FC<ApiKeyProps> = ({ open, onClose }) => {
-  const [apiKeyVal, setApiKeyVal] = useState('');
-  const [selectedModel, setSelectedModel] = useState('');
+  // Commenting these out for future use
+  //const [apiKeyVal, setApiKeyVal] = useState('');
+  //const [selectedModel, setSelectedModel] = useState('');
   if (!open) return null;
 
   const closeModal = () => {
     onClose();
   };
 
+  // Future function for submit button
   //const handleEnter: {
-  // function to enter/submit
+
   //}
 
   const modelDropdownChoice = [
@@ -88,10 +92,7 @@ const ApiKeyModal: React.FC<ApiKeyProps> = ({ open, onClose }) => {
           </Typography>
 
           <Box
-            sx={{ display: 'flex',
-              alignItems: 'flex-end',
-              width: '100%',
-              marginBottom: '15px' }}
+            sx={{ display: 'flex', alignItems: 'flex-end', width: '100%', marginBottom: '15px' }}
           >
             <TextField
               id="api-input"
@@ -104,9 +105,10 @@ const ApiKeyModal: React.FC<ApiKeyProps> = ({ open, onClose }) => {
               }
               size="small"
               fullWidth
-              onChange={(e) => {
-                setApiKeyVal(e.target.value);
-                }}
+              // Commented out for future use
+              //onChange={(e) => {
+              //setApiKeyVal(e.target.value);
+              //}}
             />
           </Box>
 
@@ -121,9 +123,10 @@ const ApiKeyModal: React.FC<ApiKeyProps> = ({ open, onClose }) => {
             size="small"
             helperText="Please select your model"
             fullWidth
-            onChange={(e) => {
-              setSelectedModel(e.target.value);
-            }}
+            // Commented out for future use
+            //onChange={(e) => {
+            //setSelectedModel(e.target.value);
+            //}}
           >
             {modelDropdownChoice.map((option) => (
               <MenuItem key={option.value} value={option.value}>
