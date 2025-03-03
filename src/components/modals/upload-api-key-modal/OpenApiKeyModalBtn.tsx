@@ -22,7 +22,7 @@ export default function OpenApiKeyModalBtn({ handleMenuClose }: OpenApiKeyModalB
   return (
     <>
       <MenuItem onClick={openApiKeyModal}>Add API Key and Model</MenuItem>
-      <ApiKeyModal onOpen={openApiModal} onClose={closeApiModal} />
+      <ApiKeyModal open={openApiModal} onClose={closeApiModal} />
     </>
   );
 }

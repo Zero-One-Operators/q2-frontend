@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState }  from 'react';
 import {
   Dialog,
   DialogTitle,
@@ -16,12 +16,14 @@ import KeyIcon from '@mui/icons-material/Key';
 import CloseIcon from '@mui/icons-material/Close';
 
 interface ApiKeyProps {
-  onOpen: boolean;
+  open: boolean;
   onClose: () => void;
 }
 
-const ApiKeyModal: React.FC<ApiKeyProps> = ({ onOpen, onClose }) => {
-  if (!onOpen) return null;
+const ApiKeyModal: React.FC<ApiKeyProps> = ({ open, onClose }) => {
+  const [apiKeyVal, setApiKeyVal] = useState('');
+  const [selectedModel, setSelectedModel] = useState('');
+  if (!open) return null;
 
   const closeModal = () => {
     onClose();
@@ -51,7 +53,7 @@ const ApiKeyModal: React.FC<ApiKeyProps> = ({ onOpen, onClose }) => {
 
   return (
     <Dialog
-      open={onOpen}
+      open={open}
       onClose={closeModal}
       maxWidth="sm"
       fullWidth
@@ -86,15 +88,25 @@ const ApiKeyModal: React.FC<ApiKeyProps> = ({ onOpen, onClose }) => {
           </Typography>
 
           <Box
-            sx={{ display: 'flex', alignItems: 'flex-end', width: '100%', marginBottom: '15px' }}
+            sx={{ display: 'flex',
+              alignItems: 'flex-end',
+              width: '100%',
+              marginBottom: '15px' }}
           >
-            <KeyIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
             <TextField
               id="api-input"
               variant="filled"
+              label={
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <KeyIcon sx={{ color: 'action.active', fontSize: 18 }} />
+                  Enter your API key
+                </Box>
+              }
               size="small"
               fullWidth
-              label="Enter your API key"
+              onChange={(e) => {
+                setApiKeyVal(e.target.value);
+                }}
             />
           </Box>
 
@@ -109,6 +121,9 @@ const ApiKeyModal: React.FC<ApiKeyProps> = ({ onOpen, onClose }) => {
             size="small"
             helperText="Please select your model"
             fullWidth
+            onChange={(e) => {
+              setSelectedModel(e.target.value);
+            }}
           >
             {modelDropdownChoice.map((option) => (
               <MenuItem key={option.value} value={option.value}>
@@ -130,6 +145,7 @@ const ApiKeyModal: React.FC<ApiKeyProps> = ({ onOpen, onClose }) => {
 
         <Button //Enter Button
           //onClick={handleEnter}
+          disabled
           variant="contained"
           sx={{
             backgroundColor: '#4D4D4D',
