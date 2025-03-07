@@ -13,6 +13,8 @@ import {
 import SendIcon from '@mui/icons-material/Send';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import PersonIcon from '@mui/icons-material/Person';
+import { sendChatMessage } from "@/app/lib/api";
+
 
 interface Message {
   message: string;
@@ -25,6 +27,19 @@ const Chat = () => {
   const [inputValue, setInputValue] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const messagesEndRef = useRef<HTMLDivElement | null>(null); // Reference for auto-scrolling
+  
+  useEffect(() => {
+    callChatEndPoint();
+  }, []);
+
+  const callChatEndPoint = async () =>
+  {
+      console.log("Run callChatEndPoint");
+      const data = await sendChatMessage("Random String");
+      console.log(data);
+      console.log("Ran sendChatMessage");
+  }
+
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
