@@ -30,8 +30,6 @@ const Chat = () => {
   
 
 
-
-
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -43,6 +41,7 @@ const Chat = () => {
     const trimmed = inputValue.trim();
     if (!trimmed) return;
 
+    // Set User Message
     const userMessage: Message = {
       message: trimmed,
       timestamp: new Date().toISOString(),
@@ -53,10 +52,11 @@ const Chat = () => {
     setInputValue('');
     setLoading(true);
 
+    // Endpint via lib/api to call backlened chat endpoint
     const response = await sendChatMessage(trimmed);
 
-    if(response){
-      setMessages((prev)=> [
+    if (response !== null && response !== undefined){
+      setMessages((prev) => [
         ...prev, 
         {
           message: response.message,

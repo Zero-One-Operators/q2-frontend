@@ -1,4 +1,9 @@
-export const sendChatMessage = async (message: string): Promise<void> => {
+interface ChatResponse {
+    message: string;
+}
+
+
+export const sendChatMessage = async (message: string): Promise<ChatResponse | null> => {
     try {
         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/chat`, {
             method: 'POST',
@@ -16,5 +21,7 @@ export const sendChatMessage = async (message: string): Promise<void> => {
     catch (error) {
         console.error(error);
     }
+
+    return null;
 }
 
