@@ -13,8 +13,7 @@ import {
 import SendIcon from '@mui/icons-material/Send';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import PersonIcon from '@mui/icons-material/Person';
-import { sendChatMessage } from "@/app/lib/api";
-
+import { sendChatMessage } from '@/app/lib/api';
 
 interface Message {
   message: string;
@@ -27,8 +26,6 @@ const Chat = () => {
   const [inputValue, setInputValue] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const messagesEndRef = useRef<HTMLDivElement | null>(null); // Reference for auto-scrolling
-  
-
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -55,27 +52,26 @@ const Chat = () => {
     // Endpint via lib/api to call backlened chat endpoint
     const response = await sendChatMessage(trimmed);
 
-    if (response !== null && response !== undefined){
+    if (response !== null && response !== undefined) {
       setMessages((prev) => [
-        ...prev, 
+        ...prev,
         {
           message: response.message,
           timestamp: new Date().toISOString(),
-          sender: 'Agent'
-        }
-      ])
-
+          sender: 'Agent',
+        },
+      ]);
     } else {
-      setMessages((prev)=> [
-        ...prev, 
+      setMessages((prev) => [
+        ...prev,
         {
           message: 'Error: Something went wrong',
           timestamp: new Date().toISOString(),
-          sender: 'Backend'
-        }
-      ])
+          sender: 'Backend',
+        },
+      ]);
     }
-   
+
     setLoading(false);
   };
 
