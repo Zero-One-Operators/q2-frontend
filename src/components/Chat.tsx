@@ -28,17 +28,8 @@ const Chat = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const messagesEndRef = useRef<HTMLDivElement | null>(null); // Reference for auto-scrolling
   
-  useEffect(() => {
-    callChatEndPoint();
-  }, []);
 
-  const callChatEndPoint = async () =>
-  {
-      console.log("Run callChatEndPoint");
-      const data = await sendChatMessage("Random String");
-      console.log(data);
-      console.log("Ran sendChatMessage");
-  }
+
 
 
   const scrollToBottom = () => {
@@ -62,17 +53,29 @@ const Chat = () => {
     setInputValue('');
     setLoading(true);
 
-    // Simulate an API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const response = await sendChatMessage(trimmed);
 
-    setMessages((prev) => [
-      ...prev,
-      {
-        message: 'Thinking...',
-        timestamp: new Date().toISOString(),
-        sender: 'Agent',
-      },
-    ]);
+    if(response){
+      setMessages((prev)=> [
+        ...prev, 
+        {
+          message: response.message,
+          timestamp: new Date().toISOString(),
+          sender: 'Agent'
+        }
+      ])
+
+    } else {
+      setMessages((prev)=> [
+        ...prev, 
+        {
+          message: 'Error: Something went wrong',
+          timestamp: new Date().toISOString(),
+          sender: 'Backend'
+        }
+      ])
+    }
+   
     setLoading(false);
   };
 
