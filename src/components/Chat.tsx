@@ -13,6 +13,7 @@ import {
 import SendIcon from '@mui/icons-material/Send';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import PersonIcon from '@mui/icons-material/Person';
+import { sendChatMessage } from '@/app/lib/api';
 
 interface Message {
   message: string;
@@ -37,6 +38,7 @@ const Chat = () => {
     const trimmed = inputValue.trim();
     if (!trimmed) return;
 
+    // Set User Message
     const userMessage: Message = {
       message: trimmed,
       timestamp: new Date().toISOString(),
@@ -47,17 +49,29 @@ const Chat = () => {
     setInputValue('');
     setLoading(true);
 
-    // Simulate an API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    // Endpint via lib/api to call backlened chat endpoint
+    const response = await sendChatMessage(trimmed);
 
-    setMessages((prev) => [
-      ...prev,
-      {
-        message: 'Thinking...',
-        timestamp: new Date().toISOString(),
-        sender: 'Agent',
-      },
-    ]);
+    if (response !== null && response !== undefined) {
+      setMessages((prev) => [
+        ...prev,
+        {
+          message: response.message,
+          timestamp: new Date().toISOString(),
+          sender: 'Agent',
+        },
+      ]);
+    } else {
+      setMessages((prev) => [
+        ...prev,
+        {
+          message: 'Error: Something went wrong',
+          timestamp: new Date().toISOString(),
+          sender: 'Backend',
+        },
+      ]);
+    }
+
     setLoading(false);
   };
 
